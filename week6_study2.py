@@ -1,25 +1,28 @@
-class account():
-    M_name = None
-    M_balance = None
+class Circle:
+    r = None
 
-    def __init__(self, name, balance):
-        self.M_name = name
-        self.M_balance = balance
-    
-    def deposit(self, amount):
-        self.M_balance += amount
-        print(self.M_name, "님의 계좌에", amount, "원이 성공적으로 입금되었습니다.\t잔액은 ", self.M_balance)
+    def __init__(self, radius = 20):
+        print("Circle 객체가 생성됩니다.")
+        self.r = radius
 
-    def withdraw(self, amount):
-        self.M_balance -= amount
-        print(self.M_name, "님의 계좌에서", amount, "원이 성공적으로 출금되었습니다.  잔액은 ", self.M_balance)
-    
-    def print_balnce(self):
-        print(self.M_name, "님의 계좌 잔액은", self.M_balance, "원 입니다.")
+    def SetRadius(self, radius):
+        self.r = radius
 
-John = account("John", 10000)
-John.deposit(7500)
-John.withdraw(1500)
-John.deposit(3000)
-John.withdraw(6700)
-John.print_balnce()
+    def Area(self):
+        area = self.r ** 2 * 3.14
+        print(f"원의 넓이는 {area:.2f}")
+
+    def Perimeter(self):
+        perimeter = 2 * self.r * 3.14
+        print(f"원의 둘레는 {perimeter:.2f}")
+
+circle1 = Circle()
+
+print(circle1.r)    # r = 20
+circle1.Area()      # 20 * 20 * 3.14
+circle1.Perimeter() # 2 * 20 * 3.14
+
+circle1.SetRadius(10)   # r = 10
+print(circle1.r)        # r = 10
+circle1.Area()          # 10 * 10 * 3.14
+circle1.Perimeter()     # 2 * 10 * 3.14
