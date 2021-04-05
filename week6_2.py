@@ -1,3 +1,5 @@
+import random
+from random import *
 class Student:
     name = None
     kor = None
@@ -18,6 +20,9 @@ class Student:
         average = self.getSum() / 3
         return average
 
-std1 = Student('Kim', 90, 50, 88)
-print(std1.getSum())
-print(std1.getAvg())
+std = []
+members = 20
+for member in range(members):
+    name = ''.join(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'])
+    std.append(Student(name, randint(0, 100), randint(0, 100), randint(0, 100)))
+    print(f"{std[member].name}의 총 점수는 {std[member].getSum()}이고, 평균은 {std[member].getAvg():.2f}입니다.")
