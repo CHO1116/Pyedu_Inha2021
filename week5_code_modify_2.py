@@ -8,11 +8,9 @@ def get_2CirclesArea(Radius1, Radius2):
     else: # Modified Source Code
         Area = Area2 - Area1
     return Area
-    
-S1 = get_2CirclesArea(5, 50)
-S2 = get_2CirclesArea(3, 30)
-S3 = get_2CirclesArea(7, 9)
 
-print(S1)
-print(S2)
-print(S3)
+for i in range(3):
+    r1, r2 = map(int, input("서로 다른 반지름의 길이를 입력하세요. ").split())
+    S1 = get_2CirclesArea(r1, r2)
+    print(S1)
+print("감사합니다.")
