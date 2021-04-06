@@ -1,4 +1,3 @@
-import random
 from random import *
 class Student:
     name = None
@@ -21,8 +20,9 @@ class Student:
         return average
 
 std = []
+name = [ '성민이', '철수', '지영이', '영희', '주영이', '늘이', '경준이', '수영이', '희진이', '찬희', 
+         '송강', '지연이', '상혁이', '양호', '대훈이', '정인이', '지수', '준서', '상준이', '경민이' ]
 members = 20
 for member in range(members):
-    name = ''.join(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'])
-    std.append(Student(name, randint(0, 100), randint(0, 100), randint(0, 100)))
+    std.append(Student(name[member], randint(0, 100), randint(0, 100), randint(0, 100)))
     print(f"{std[member].name}의 총 점수는 {std[member].getSum()}이고, 평균은 {std[member].getAvg():.2f}입니다.")
